@@ -1,3 +1,55 @@
-*{
-    font: 100;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    /* Fundo da página */
+    background-image: url('../assets/macaco_ex1.jpg');
+    background-size: cover; /* 🔥 CORRETO */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 🔥 CORRETO */
+    text-align: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+}
+
+/* Desktop */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 15px; /* menor pra caber melhor */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    body {
+        background-position: top; /* evita cortar rosto/parte importante */
+    }
 }
