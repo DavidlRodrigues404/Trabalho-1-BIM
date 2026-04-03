@@ -1,0 +1,280 @@
+:root {
+    --primary-color: #6a5acd;
+    --secondary-color: #1d9e75;
+    --text-color-light: #e0e0e0;
+    --text-color-accent: #ffffff;
+    --card-background: rgba(45, 45, 60, 0.8);
+    --border-radius: 10px;
+    --box-shadow-card: 0 6px 12px rgba(0, 0, 0, 0.4);
+    --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.6);
+    --input-background: rgba(60, 60, 80, 0.9); /* Fundo dos inputs */
+    --input-border: rgba(100, 100, 120, 0.5); /* Borda dos inputs */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    color: var(--text-color-light);
+
+    background-color: #0d0d12;
+    background-image:
+        radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
+        radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
+        radial-gradient(ellipse 300px 300px at 50% 90%,  rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+        linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    background-attachment: fixed;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-color-accent);
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-accent);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+h1, h2, h3 {
+    color: var(--text-color-accent);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    background-color: rgba(13, 13, 18, 0.8);
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header nav h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header nav h1 a {
+    color: var(--text-color-accent);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: var(--text-color-light);
+    font-weight: 400;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+main {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para a seção de contato */
+#contact-section {
+    width: 100%;
+    max-width: 700px; /* Largura máxima para a seção de contato */
+    text-align: center;
+    padding: 20px;
+}
+
+#contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Estilos para o formulário de contato */
+.contact-form {
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* box-shadow aplicada aqui */
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-color-accent);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: var(--input-background);
+    color: var(--text-color-accent);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: rgba(13, 13, 18, 0.8);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    header nav h1 {
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav ul li {
+        margin: 5px 0;
+    }
+    header nav ul li a {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    #contact-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .contact-form .btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav h1 {
+        font-size: 1.3rem;
+    }
+    header nav ul li a {
+        font-size: 0.9rem;
+    }
+    #contact-section h2 {
+        font-size: 1.8rem;
+    }
+    #contact-section p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+}

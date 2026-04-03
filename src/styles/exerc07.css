@@ -1,0 +1,271 @@
+/* ═══════════════════════════════════════
+   style.css — Estilos da página de Login
+   ═══════════════════════════════════════ */
+
+/* ───── VARIÁVEIS ───── */
+:root {
+  --bg:           #0e0e10;
+  --card:         #18181c;
+  --border:       #2e2e38;
+  --border-focus: #c8a96e;
+  --accent:       #c8a96e;
+  --text:         #f0ede8;
+  --muted:        #7a7880;
+  --error:        #e07070;
+}
+
+/* ───── RESET ───── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ───── BODY ───── */
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background-image:
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(200,169,110,.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 10%, rgba(200,169,110,.05) 0%, transparent 70%);
+  overflow: hidden;
+}
+
+/* Linhas de grade decorativas */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,169,110,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,169,110,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* ───── CARD ───── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  width: 100%;
+  max-width: 420px;
+  padding: 56px 48px 48px;
+  position: relative;
+  animation: fadeUp .6s cubic-bezier(.22,1,.36,1) both;
+}
+
+/* Cantos decorativos */
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--accent);
+  border-style: solid;
+}
+.card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.card::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ───── LOGO ───── */
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* ───── TÍTULOS ───── */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+/* ───── CAMPO (field) ───── */
+.field {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+  transition: color .2s;
+}
+
+/*
+ * TAG: <input>
+ * PROPRIEDADE CSS: border
+ *
+ * Aplicamos 'border' nos campos de entrada para definir
+ * aparência, espessura e cor das bordas de forma explícita.
+ */
+input {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  background: transparent;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  outline: none;
+  transition: border .25s, background .25s;
+  border-radius: 2px;
+
+  /* ← PROPRIEDADE border (shorthand: largura estilo cor) */
+  border: 1px solid var(--border);
+}
+
+input::placeholder {
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* Estado de foco — borda muda de cor */
+input:focus {
+  border: 1.5px solid var(--border-focus);
+  background: rgba(200,169,110,.04);
+}
+
+.field:focus-within label {
+  color: var(--accent);
+}
+
+/* Ícone à direita do campo de senha */
+.field-icon {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  transition: color .2s;
+}
+.field-icon:hover { color: var(--accent); }
+
+/* ───── OPÇÕES ───── */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+  font-size: 12px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+/* Checkbox estilizado com border */
+.remember input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  cursor: pointer;
+  accent-color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.forgot {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 12px;
+}
+.forgot:hover { text-decoration: underline; }
+
+/* ───── BOTÃO ───── */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: var(--accent);
+  color: #0e0e10;
+  border: none;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: filter .2s, transform .15s;
+}
+.btn:hover  { filter: brightness(1.1); }
+.btn:active { transform: scale(.98); }
+
+/* ───── DIVISOR ───── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ───── RODAPÉ ───── */
+.footer {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.footer a:hover { text-decoration: underline; }

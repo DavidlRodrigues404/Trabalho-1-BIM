@@ -1,116 +1,235 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+/* Variáveis CSS para fácil personalização */
+:root {
+    --primary-color: #007bff; /* Azul vibrante para botões e links */
+    --background-dark: #1a237e; /* Azul escuro principal */
+    --background-light-section: #2c388e; /* Um tom um pouco mais claro para seções alternadas */
+    --text-color-light: #e0e0e0; /* Texto claro para contraste */
+    --text-color-accent: #ffffff; /* Branco para títulos em fundo escuro */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --card-background: #3949ab; /* Fundo dos cards */
 }
 
+/* Estilos gerais */
 body {
-  background: #0f172a;
-  color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color-light);
+    background-color: var(--background-dark);
 }
 
-/* NAVBAR */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #64b5f6; /* Tom mais claro do azul para hover */
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    color: var(--text-color-accent);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-accent);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Tom mais escuro do azul */
+    text-decoration: none;
+}
+
+/* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: #020617;
-  position: sticky;
-  top: 0;
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow);
 }
 
-header h1 {
-  color: #38bdf8;
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
+header nav h1 {
+    margin: 0;
+    color: var(--text-color-accent);
+    font-size: 1.8rem;
 }
 
-nav a:hover {
-  color: #38bdf8;
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-/* INTRO */
-.intro {
-  text-align: center;
-  padding: 60px 20px;
+header nav ul li {
+    margin-left: 20px;
 }
 
-.intro h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
+header nav ul li a {
+    color: var(--text-color-light);
+    font-weight: 400;
 }
 
-.intro p {
-  color: #94a3b8;
+/* Seções gerais */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* GRID */
-.portfolio {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 40px;
+section:nth-of-type(even) {
+    background-color: var(--background-light-section); /* Fundo levemente diferente para contraste */
 }
 
-/* CARD */
-.card {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  cursor: pointer;
+/* Grid da Galeria de Projetos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+    gap: 30px; /* Espaçamento entre os itens */
+    margin-top: 40px;
 }
 
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: 0.4s;
+.project-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px; /* Espaçamento abaixo do conteúdo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* OVERLAY */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
-  text-align: center;
-  padding: 20px;
+.project-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
 }
 
-.overlay h3 {
-  color: #38bdf8;
-  margin-bottom: 10px;
+.project-card img {
+    width: 100%;
+    height: 180px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    display: block;
+    margin-bottom: 15px;
 }
 
-.overlay p {
-  font-size: 14px;
-  color: #cbd5f5;
+.project-card h3 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    color: var(--text-color-accent);
 }
 
-.card:hover img {
-  transform: scale(1.1);
+.project-card p {
+    font-size: 0.95rem;
+    padding: 0 15px;
+    margin-bottom: 20px;
 }
 
-.card:hover .overlay {
-  opacity: 1;
+.project-card .btn {
+    margin-top: auto; /* Empurra o botão para baixo */
 }
 
-/* FOOTER */
+/* Seção Sobre Mim */
+#sobre p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+}
+
+/* Seção Contato */
+#contato form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    text-align: left;
+    background-color: var(--card-background); /* Fundo do formulário */
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-color-accent);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #5c6bc0; /* Borda mais clara */
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #424242; /* Fundo escuro para inputs */
+    color: var(--text-color-accent);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Footer */
 footer {
-  text-align: center;
-  padding: 20px;
-  background: #020617;
-  color: #64748b;
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+    header nav h1 {
+        margin-bottom: 15px;
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
 }
