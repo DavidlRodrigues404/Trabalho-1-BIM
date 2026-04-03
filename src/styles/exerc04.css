@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  padding: 48px 24px;
+  background-color: #0d0d12;
+  background-image:
+    radial-gradient(ellipse 500px 500px at -5% -15%,  rgba(83, 74, 183, 0.28) 0%, transparent 70%),
+    radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50%  90%,  rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+    linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.header-tag {
+  font-size: 11px;
+  color: #1D9E75;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #f0eeff;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 14px;
+  color: #6662a0;
+  line-height: 1.7;
+}
+
+.posts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.posts li {
+  background: #13131a;
+  border: 0.5px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.posts li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #534AB7, #1D9E75);
+  border-radius: 3px 0 0 3px;
+}
+
+.posts li:hover {
+  border-color: rgba(127, 119, 221, 0.25);
+  transform: translateX(4px);
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.post-date {
+  font-size: 11px;
+  color: #6662a0;
+  letter-spacing: 0.5px;
+}
+
+.post-tag {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: #1e1e2e;
+  color: #9290b8;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.posts li h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #f0eeff;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.posts li p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #8884b8;
+  margin-bottom: 18px;
+}
+
+.posts li a {
+  font-size: 12px;
+  font-weight: 500;
+  color: #AFA9EC;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+
+.posts li a:hover {
+  color: #f0eeff;
+}
+
+.footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  font-size: 12px;
+  color: #3a3860;
+}

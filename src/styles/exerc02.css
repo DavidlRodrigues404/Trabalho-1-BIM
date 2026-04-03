@@ -1,20 +1,150 @@
-body{
-    font-size: 25px;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: white;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.perfil{
-    background: white;
-    width: 400px;
-    margin: 10px auto;
-    padding: 20px;
-    border-radius: 10px;
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #0d0d12;
+  background-image:
+    radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
+    radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50% 90%,  rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+    linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
 }
 
-.foto{
-    width: 250px;
-    height: 250px;
-    border-radius: 10%;
+.card {
+  background: #13131a;
+  border: 0.5px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  width: 400px;
+  overflow: hidden;
+}
+
+.banner {
+  height: 110px;
+  background: linear-gradient(135deg, #534AB7, #1D9E75);
+}
+
+.card-body {
+  padding: 0 28px 32px;
+  text-align: center;
+}
+
+.avatar-wrap {
+  margin-top: -48px;
+  margin-bottom: 18px;
+  display: inline-block;
+  padding: 3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #534AB7, #1D9E75);
+}
+
+img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid #13131a;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0eeff;
+  margin-bottom: 4px;
+}
+
+.cargo {
+  font-size: 12px;
+  color: #6662a0;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.bio {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #8884b8;
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  background: #0f0f18;
+  border-radius: 12px;
+  border: 0.5px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #1e1e2e;
+  color: #9290b8;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.divider {
+  height: 0.5px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 24px;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: opacity 0.2s, transform 0.15s;
+  background: #534AB7;
+  color: #e8e4ff;
+    display: flex;
+    align-items: center;
+  gap: 10px;
+}
+
+.social a:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+.social a.github {
+  background: #1a1a26;
+  color: #c8c5e8;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.social a.email {
+  background: #0f2620;
+  color: #5DCAA5;
+  border: 0.5px solid rgba(29, 158, 117, 0.2);
 }
