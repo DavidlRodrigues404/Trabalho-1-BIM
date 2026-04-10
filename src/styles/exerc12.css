@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+
+    background-color: #0d0d12;
+    background-image:
+        radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
+        radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
+        radial-gradient(ellipse 300px 300px at 50% 90%, rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+        linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #e8e6ff;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+}
+
+/* Carrossel */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    max-width: 960px;
+    width: 100%;
+}
+
+.container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: rgba(127, 119, 221, 0.4);
+    border-radius: 10px;
+}
+
+/* Cards */
+figure {
+    display: block;
+    flex: 1 1 260px;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(127, 119, 221, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    scroll-snap-align: start;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+figure:hover {
+    transform: translateY(-4px);
+    border-color: rgba(127, 119, 221, 0.5);
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+figure:hover img {
+    opacity: 1;
+}
+
+figcaption {
+    display: block;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.45);
+    padding: 8px 10px;
+    border-top: 1px solid rgba(127, 119, 221, 0.15);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    figure {
+        flex: 1 1 calc(50% - 8px);
+    }
+}
+
+@media (max-width: 480px) {
+    figure {
+        flex: 1 1 100%;
+    }
+}

@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0d12;
+  background-image:
+    radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
+    radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50% 90%, rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+    linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+blockquote {
+  margin: 0;
+  max-width: 480px;
+  padding: 28px 32px;
+  border-left: 4px solid rgba(127, 119, 221, 0.9); /* borda roxa */
+  background: rgba(83, 74, 183, 0.12);             /* fundo semi-transparente */
+  border-radius: 0 10px 10px 0;                    /* arredonda só o lado direito */
+  backdrop-filter: blur(8px);                       /* efeito de vidro */
+  position: relative;                               /* necessário para o ::before funcionar */
+}
+
+/* ::before cria um elemento decorativo sem precisar de HTML extra */
+blockquote::before {
+  content: '\201C';          /* código do caractere " */
+  font-size: 72px;
+  line-height: 1;
+  color: rgba(127, 119, 221, 0.3);
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-family: Georgia, serif;
+}
+
+blockquote p {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-style: italic;
+  color: #d0cdff;
+  line-height: 1.7;
+  padding-left: 28px; /* espaço para não sobrepor o " decorativo */
+}
+
+/* <cite> é a tag correta para indicar a fonte/autor da citação */
+blockquote cite {
+  display: block;
+  font-size: 13px;
+  color: rgba(127, 119, 221, 0.7);
+  font-style: normal;
+  padding-left: 28px;
+  letter-spacing: 0.4px;
+}

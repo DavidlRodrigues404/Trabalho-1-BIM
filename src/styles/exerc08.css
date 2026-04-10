@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+
+  /* centraliza o botão na tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* fundo escuro com gradientes */
+  background-color: #0d0d12;
+  background-image:
+    radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
+    radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50% 90%, rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+    linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+.btn {
+  width: 200px;
+  padding: 14px 20px;
+  border: 1.5px solid rgba(127, 119, 221, 0.6);
+  background: rgba(83, 74, 183, 0.18);  /* fundo semi-transparente */
+  color: #d0cdff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);           /* efeito de vidro fosco */
+  transition: background 0.25s, transform 0.15s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.btn:hover {
+  background: rgba(83, 74, 183, 0.38);
+  border-color: rgba(127, 119, 221, 1);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(127, 119, 221, 0.28); /* brilho roxo */
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
