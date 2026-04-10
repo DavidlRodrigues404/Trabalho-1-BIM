@@ -5,17 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog - David Rodrigues</title>
   <link rel="stylesheet" href="/src/styles/exerc04.css" />
+  <link rel="shortcut icon" href="/src/assets/favicon-32x32.png" type="image/x-icon">
 </head>
 <body>
 
+ <header class="navbar">
+    <a class="navbar-back" onclick="history.back()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Voltar
+    </a>
+    <span class="navbar-title">Blog</span>
+    <div class="navbar-spacer"></div>
+  </header>
+
+
   <div class="container">
-
-    <header class="header">
-      <p class="header-tag">// Meu blog</p>
-      <h1>Últimas postagens</h1>
-      <p>Artigos sobre desenvolvimento, design e tecnologia.</p>
-    </header>
-
     <ul class="posts">
 
       <li>

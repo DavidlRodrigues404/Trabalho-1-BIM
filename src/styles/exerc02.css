@@ -9,7 +9,8 @@ body {
   min-height: 100vh;
   margin: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;        /* empilha navbar + card */
+  justify-content: flex-start;   /* começa do topo */
   align-items: center;
 
   background-color: #0d0d12;
@@ -22,12 +23,67 @@ body {
   background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
 }
 
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 56px;
+  background: rgba(13, 13, 18, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 12px;
+}
+
+.navbar-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  color: #9290b8;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.navbar-back:hover {
+  background: rgba(83, 74, 183, 0.15);
+  color: #c8c5e8;
+  border-color: rgba(83, 74, 183, 0.35);
+}
+
+.navbar-title {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0eeff;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+.navbar-spacer {
+  flex-shrink: 0;
+  width: 80px;
+}
+
 .card {
   background: #13131a;
   border: 0.5px solid rgba(255, 255, 255, 0.07);
   border-radius: 24px;
   width: 400px;
   overflow: hidden;
+  margin-top: 48px;        /* espaço entre navbar e card */
+  margin-bottom: 48px;     /* respiro no fundo */
 }
 
 .banner {

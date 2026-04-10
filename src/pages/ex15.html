@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento de Produto - David Rodrigues</title>
+    <link rel="stylesheet" href="/src/styles/exerc15.css" />
+    <link rel="shortcut icon" href="/src/assets/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <p class="badge">Em breve</p>
+        <h1 class="produto-nome">Nome do Produto</h1>
+        <p class="produto-desc">Uma breve descrição impactante do produto. O que ele resolve e por que vale a pena.</p>
+    </section>
+
+    <!-- CONTAGEM REGRESSIVA -->
+    <section class="countdown-section">
+        <p class="countdown-label">Lançamento em</p>
+        <div class="countdown">
+            <div class="bloco">
+                <output id="dias">00</output>
+                <span>Dias</span>
+            </div>
+            <div class="separador">:</div>
+            <div class="bloco">
+                <output id="horas">00</output>
+                <span>Horas</span>
+            </div>
+            <div class="separador">:</div>
+            <div class="bloco">
+                <output id="minutos">00</output>
+                <span>Minutos</span>
+            </div>
+            <div class="separador">:</div>
+            <div class="bloco">
+                <output id="segundos">00</output>
+                <span>Segundos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGENS DO PRODUTO -->
+    <section class="galeria">
+        <h2 class="secao-titulo">O Produto</h2>
+        <div class="galeria-grid">
+            <figure>
+                <img src="/src/assets/produto01.jpeg" alt="Produto - visão 1">
+                <figcaption>Visão geral</figcaption>
+            </figure>
+            <figure>
+                <img src="/src/assets/produto02.jpeg" alt="Produto - visão 2">
+                <figcaption>Detalhe</figcaption>
+            </figure>
+            <figure>
+                <img src="/src/assets/produto03.jpeg" alt="Produto - visão 3">
+                <figcaption>Em uso</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- RECURSOS -->
+    <section class="recursos">
+        <h2 class="secao-titulo">Recursos</h2>
+        <div class="recursos-grid">
+            <div class="recurso-card">
+                <span class="icone">⚡</span>
+                <h3>Rápido</h3>
+                <p>Desempenho otimizado para qualquer situação.</p>
+            </div>
+            <div class="recurso-card">
+                <span class="icone">🎯</span>
+                <h3>Preciso</h3>
+                <p>Resultados exatos sem margem de erro.</p>
+            </div>
+            <div class="recurso-card">
+                <span class="icone">🔒</span>
+                <h3>Seguro</h3>
+                <p>Proteção total dos seus dados.</p>
+            </div>
+            <div class="recurso-card">
+                <span class="icone">♾️</span>
+                <h3>Escalável</h3>
+                <p>Cresce junto com a sua necessidade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO PRÉ-VENDA -->
+    <section class="prevenda">
+        <h2 class="secao-titulo">Garanta o seu</h2>
+        <p class="prevenda-desc">Cadastre-se agora e seja o primeiro a receber quando lançar.</p>
+        <form class="form-prevenda">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <button type="submit">Quero garantir meu lugar</button>
+        </form>
+    </section>
+
+    <footer class="rodape">
+        <p>&copy; 2025 David Rodrigues. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="/src/scripts/exerc15.js"></script>
+</body>
+</html>
