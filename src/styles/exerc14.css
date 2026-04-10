@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #0d0d12;
+    background-image:
+        radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
+        radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
+        radial-gradient(ellipse 300px 300px at 50% 90%,  rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+        linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Página inteira centralizada */
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.cabecalho p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Grid de cards — flex com wrap */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Card individual */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    flex: 1 1 260px;
+    max-width: 300px;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.8rem 1.4rem;
+
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(127, 119, 221, 0.4);
+}
+
+/* Foto */
+.foto-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(127, 119, 221, 0.5);
+}
+
+.foto-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Informações */
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.cargo {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(127, 119, 221, 0.9);
+    background: rgba(127, 119, 221, 0.1);
+    border: 1px solid rgba(127, 119, 221, 0.2);
+    border-radius: 20px;
+    padding: 3px 12px;
+}
+
+.bio {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.6;
+    margin-top: 4px;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
