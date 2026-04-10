@@ -1,194 +1,262 @@
-:root {
-    --primary-color: #6a5acd;
-    --secondary-color: #1d9e75;
-    --text-color-light: #e0e0e0;
-    --text-color-accent: #ffffff;
-    --card-background: rgba(45, 45, 60, 0.8);
-    --border-radius: 10px;
-    --box-shadow-card: 0 6px 12px rgba(0, 0, 0, 0.4);
-    --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.6);
-    --input-background: rgba(60, 60, 80, 0.9);
-    --input-border: rgba(100, 100, 120, 0.5);
-    --completed-text-color: #9e9e9e; /* Cor para texto de tarefa concluída */
+/* ── Reset ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* ── Body / fundo ── */
 body {
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   background-color: #0d0d12;
   background-image:
     radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
     radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
-    radial-gradient(ellipse 300px 300px at 50% 90%,  rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50% 90%, rgba(83, 74, 183, 0.10) 0%, transparent 70%),
     linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  padding: 2rem 1rem;
 }
 
-main {
-    flex-grow: 1;
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* ── Página ── */
+.page {
+  max-width: 560px;
+  margin: 0 auto;
 }
 
-/* Estilos para a seção de Lista de Tarefas */
-#todo-section {
-    width: 100%;
-    max-width: 600px; /* Largura máxima para o container da lista de tarefas */
-    text-align: center;
-    padding: 20px;
+/* ── Cabeçalho ── */
+.header {
+  margin-bottom: 1.5rem;
 }
 
-#todo-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+.header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #f0eefc;
 }
 
-.todo-container {
-    background-color: var(--card-background);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Sombra para o container */
+.header p {
+  font-size: 14px;
+  color: rgba(200, 196, 240, 0.5);
+  margin-top: 4px;
 }
 
-.todo-input-group {
-    display: flex;
-    margin-bottom: 25px;
+/* ── Cards de estatísticas ── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1.25rem;
 }
 
-.todo-input-group input[type="text"] {
-    flex-grow: 1;
-    padding: 12px 15px;
-    border: 1px solid var(--input-border);
-    border-radius: var(--border-radius);
-    background-color: var(--input-background);
-    color: var(--text-color-accent);
-    font-size: 1rem;
-    margin-right: 10px;
+.stat {
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.5px solid rgba(127, 119, 221, 0.18);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
 }
 
-.todo-input-group input[type="text"]::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+.stat-label {
+  font-size: 12px;
+  color: rgba(160, 155, 210, 0.5);
+  margin-bottom: 4px;
 }
 
-.todo-input-group .btn {
-    margin-top: 0; /* Anula a margem do botão para alinhar */
-    padding: 12px 20px;
-    font-size: 1rem;
-    white-space: nowrap; /* Evita que o texto "Adicionar" quebre */
+.stat-value {
+  font-size: 22px;
+  font-weight: 500;
+  color: #e8e6f8;
 }
 
-.todo-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* ── Linha de adicionar ── */
+.add-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.25rem;
 }
 
-.todo-item {
-    display: flex;
-    align-items: center;
-    background-color: rgba(60, 60, 80, 0.6); /* Fundo um pouco mais claro para itens */
-    border-radius: var(--border-radius);
-    padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+/* ── Tag <input> com border ── */
+.add-row input[type="text"] {
+  flex: 1;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(127, 119, 221, 0.22);   /* propriedade border */
+  background: rgba(255, 255, 255, 0.05);
+  color: #e8e6f8;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
 }
 
-.todo-item:last-child {
-    margin-bottom: 0;
+.add-row input[type="text"]:focus {
+  border: 1.5px solid rgba(127, 119, 221, 0.75);   /* border no focus */
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 3px rgba(83, 74, 183, 0.12);
 }
 
-.todo-item.completed {
-    background-color: rgba(40, 40, 50, 0.6);
+.add-row input[type="text"]::placeholder {
+  color: rgba(160, 155, 210, 0.35);
 }
 
-.todo-item input[type="checkbox"] {
-    margin-right: 15px;
-    min-width: 20px; /* Garante tamanho mínimo para o checkbox */
-    min-height: 20px;
-    cursor: pointer;
-    accent-color: var(--primary-color); /* Altera a cor do checkbox (Chrome/Firefox) */
+/* ── Botões gerais ── */
+.btn {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(127, 119, 221, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0ddf8;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
 }
 
-.todo-item span.task-text {
-    flex-grow: 1;
-    font-size: 1.1rem;
-    color: var(--text-color-light);
-    text-align: left;
-    word-break: break-word; /* Quebra palavras longas */
+.btn:hover {
+  background: rgba(255, 255, 255, 0.10);
 }
 
-/* Propriedade text-decoration aplicada */
-.todo-item.completed span.task-text {
-    text-decoration: line-through; /* Risca o texto */
-    color: var(--completed-text-color); /* Cor mais clara para indicar concluído */
+.btn:active {
+  transform: scale(0.98);
 }
 
-.todo-item .actions {
-    display: flex;
-    gap: 8px; /* Espaçamento entre os botões de ação */
-    margin-left: 15px;
+.btn-primary {
+  background: #534AB7;
+  color: #fff;
+  border-color: #534AB7;
 }
 
-.todo-item .actions button {
-    background: none;
-    border: none;
-    color: var(--text-color-light);
-    font-size: 1.1rem;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+.btn-primary:hover {
+  background: #3C3489;
+  border-color: #3C3489;
 }
 
-.todo-item .actions button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--primary-color);
+.btn-danger {
+  color: #f09595;
+  border-color: rgba(226, 75, 74, 0.3);
 }
 
-.todo-item .actions button.edit-btn:hover {
-    color: var(--secondary-color);
+.btn-danger:hover {
+  background: rgba(226, 75, 74, 0.1);
 }
 
-.todo-item .actions button.delete-btn:hover {
-    color: #ff6347; /* Tom de vermelho para o botão de deletar */
+.btn-sm {
+  height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
 }
 
-/* Estilos de responsividade permanecem os mesmos que você já tem */
-@media (max-width: 768px) {
-    /* ... seu media query de 768px */
-    .todo-input-group {
-        flex-direction: column;
-    }
-    .todo-input-group input[type="text"] {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    .todo-input-group .btn {
-        width: 100%;
-    }
+/* ── Filtros ── */
+.filter-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 480px) {
-    /* ... seu media query de 480px */
-    #todo-section h2 {
-        font-size: 1.8rem;
-    }
-    .todo-item span.task-text {
-        font-size: 1rem;
-    }
-    .todo-item .actions button {
-        font-size: 1rem;
-    }
+.filter-btn {
+  height: 28px;
+  padding: 0 14px;
+  border-radius: 20px;
+  border: 0.5px solid rgba(127, 119, 221, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(200, 196, 240, 0.6);
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn.active {
+  background: #534AB7;
+  color: #fff;
+  border-color: #534AB7;
+}
+
+/* ── Card da lista ── */
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(127, 119, 221, 0.18);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* ── Item de tarefa ── */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 0.5px solid rgba(127, 119, 221, 0.10);
+  transition: background 0.15s;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ── <input type="checkbox"> ── */
+.task-item input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #534AB7;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(127, 119, 221, 0.4);   /* border no checkbox */
+}
+
+/* ── Texto da tarefa ── */
+.task-text {
+  flex: 1;
+  font-size: 14px;
+  color: #e0ddf8;
+  transition: color 0.2s;
+}
+
+/* ── Propriedade text-decoration aplicada nas tarefas concluídas ── */
+.task-text.done {
+  text-decoration: line-through;   /* propriedade text-decoration */
+  color: rgba(160, 155, 210, 0.4);
+}
+
+/* ── Input de edição ── */
+.task-edit-input {
+  flex: 1;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(127, 119, 221, 0.5);   /* border no input de edição */
+  background: rgba(255, 255, 255, 0.06);
+  color: #e8e6f8;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+}
+
+.task-edit-input:focus {
+  border-color: rgba(127, 119, 221, 0.9);
+  box-shadow: 0 0 0 3px rgba(83, 74, 183, 0.12);
+}
+
+/* ── Ações (botões editar/excluir) ── */
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* ── Estado vazio ── */
+.empty {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: rgba(160, 155, 210, 0.35);
+  font-size: 14px;
 }

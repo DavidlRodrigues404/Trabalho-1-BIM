@@ -1,44 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tarefas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Trabalho-1-BIM/src/styles/exerc09.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="/Trabalho-1-BIM/src/styles/exerc09.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav>
-            <h1><a href="index.html">Meu Portfólio</a></h1>
-            <ul>
-                <li><a href="index.html#projetos">Projetos</a></li>
-                <li><a href="contact.html">Contato</a></li>
-                <li><a href="todo.html">Tarefas</a></li> <!-- Link para a lista de tarefas -->
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="todo-section">
-            <h2>Minha Lista de Tarefas</h2>
+  <div class="page">
 
-            <div class="todo-container">
-                <div class="todo-input-group">
-                    <input type="text" id="todo-input" placeholder="Adicionar nova tarefa..." aria-label="Nova tarefa">
-                    <button id="add-todo-btn" class="btn">Adicionar</button>
-                </div>
+    <div class="header">
+      <h1>Lista de tarefas</h1>
+      <p>Organize e acompanhe suas atividades</p>
+    </div>
 
-                <ul id="todo-list" class="todo-list">
-                    <!-- Tarefas serão adicionadas aqui via JavaScript -->
-                </ul>
-            </div>
-        </section>
-    </main>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Total</div>
+        <div class="stat-value" id="s-total">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Concluídas</div>
+        <div class="stat-value" id="s-done">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Pendentes</div>
+        <div class="stat-value" id="s-pending">0</div>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Meu Portfólio. Todos os direitos reservados.</p>
-    </footer>
+    <div class="add-row">
+      <input type="text" id="new-task" placeholder="Nova tarefa..." />
+      <button class="btn btn-primary" onclick="addTask()">+ Adicionar</button>
+    </div>
 
-</body>
-</html>
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="setFilter('all', this)">Todas</button>
+      <button class="filter-btn" onclick="setFilter('pending', this)">Pendentes</button>
+      <button class="filter-btn" onclick="setFilter('done', this)">Concluídas</button>
+    </div>
+
+    <div class="card" id="task-list"></div>
+
+  </div>
+

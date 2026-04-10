@@ -1,0 +1,120 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa do Site</title>
+  <link rel="stylesheet" href="/Trabalho-1-BIM/src/styles/exerc11.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="page">
+
+    <div class="header">
+      <h1>Mapa do site</h1>
+      <p>Estrutura de navegação e organização de páginas</p>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><div class="dot dot-root"></div> Raiz</div>
+      <div class="legend-item"><div class="dot dot-section"></div> Seção</div>
+      <div class="legend-item"><div class="dot dot-page"></div> Página / subpágina</div>
+    </div>
+
+    <div class="sitemap-card">
+
+      <!-- ── Nível 1: raiz ── -->
+      <ul class="root">
+        <li>
+          <div class="node">
+            <span class="label">Início</span>
+            <span class="url">/</span>
+          </div>
+
+          <!-- ── Nível 2: seções principais ── -->
+          <ul class="level2">
+
+            <li>
+              <div class="node">
+                <span class="label">Sobre</span>
+                <span class="url">/sobre</span>
+              </div>
+              <!-- ── Nível 3: páginas internas ── -->
+              <ul class="level3">
+                <li><div class="node"><span class="label">Nossa história</span><span class="url">/sobre/historia</span></div></li>
+                <li><div class="node"><span class="label">Equipe</span><span class="url">/sobre/equipe</span></div></li>
+                <li><div class="node"><span class="label">Missão e valores</span><span class="url">/sobre/missao</span></div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node">
+                <span class="label">Serviços</span>
+                <span class="url">/servicos</span>
+              </div>
+              <ul class="level3">
+                <li>
+                  <div class="node"><span class="label">Web design</span><span class="url">/servicos/web-design</span></div>
+                  <!-- ── Nível 4: subpáginas ── -->
+                  <ul class="level4">
+                    <li><div class="node"><span class="label">Landing pages</span><span class="url">/servicos/web-design/landing</span></div></li>
+                    <li><div class="node"><span class="label">E-commerce</span><span class="url">/servicos/web-design/ecommerce</span></div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node"><span class="label">Desenvolvimento</span><span class="url">/servicos/desenvolvimento</span></div>
+                  <ul class="level4">
+                    <li><div class="node"><span class="label">Front-end</span><span class="url">/servicos/dev/frontend</span></div></li>
+                    <li><div class="node"><span class="label">Back-end</span><span class="url">/servicos/dev/backend</span></div></li>
+                    <li><div class="node"><span class="label">Mobile</span><span class="url">/servicos/dev/mobile</span></div></li>
+                  </ul>
+                </li>
+                <li><div class="node"><span class="label">Consultoria</span><span class="url">/servicos/consultoria</span></div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node">
+                <span class="label">Portfólio</span>
+                <span class="url">/portfolio</span>
+              </div>
+              <ul class="level3">
+                <li><div class="node"><span class="label">Projetos web</span><span class="url">/portfolio/web</span></div></li>
+                <li><div class="node"><span class="label">Projetos mobile</span><span class="url">/portfolio/mobile</span></div></li>
+                <li><div class="node"><span class="label">Estudos de caso</span><span class="url">/portfolio/casos</span></div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node">
+                <span class="label">Blog</span>
+                <span class="url">/blog</span>
+              </div>
+              <ul class="level3">
+                <li><div class="node"><span class="label">Categorias</span><span class="url">/blog/categorias</span></div></li>
+                <li><div class="node"><span class="label">Artigos</span><span class="url">/blog/artigos</span></div></li>
+                <li><div class="node"><span class="label">Tutoriais</span><span class="url">/blog/tutoriais</span></div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node">
+                <span class="label">Contato</span>
+                <span class="url">/contato</span>
+              </div>
+              <ul class="level3">
+                <li><div class="node"><span class="label">Formulário</span><span class="url">/contato/formulario</span></div></li>
+                <li><div class="node"><span class="label">Localização</span><span class="url">/contato/localizacao</span></div></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</body>
+</html>

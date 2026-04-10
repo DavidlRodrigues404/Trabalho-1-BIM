@@ -2,75 +2,43 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-
-  <!-- Arquivo CSS externo -->
-  <link rel="stylesheet" href="/Trabalho-1-BIM/src/styles/exerc07.css"/>
+  <link rel="stylesheet" href="/Trabalho-1-BIM/src/styles/exerc07.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <div class="card">
-    <div class="logo">Acesso seguro</div>
+  <div class="login-card">
 
-    <h1>Bem-vindo<br>de volta.</h1>
-    <p class="subtitle">Entre com suas credenciais para continuar.</p>
+    <h1 class="login-title">Bem-vindo de volta</h1>
+    <p class="login-subtitle">Entre na sua conta para continuar</p>
 
-    <!-- Campo: nome de usuário -->
-    <div class="field">
-      <label for="usuario">Usuário</label>
-      <!--
-        TAG <input> — campo de texto para nome de usuário
-        A propriedade CSS 'border' estiliza a linha ao redor do campo (definida no style.css).
-      -->
-      <input
-        type="text"
-        id="usuario"
-        name="usuario"
-        placeholder="seu@email.com"
-        autocomplete="username"
-      />
+    <div class="field-group">
+      <label class="field-label" for="username">Nome de usuário</label>
+      <input type="text" id="username" name="username" placeholder="seu_usuario" autocomplete="username" />
     </div>
 
-    <!-- Campo: senha -->
-    <div class="field">
-      <label for="senha">Senha</label>
-      <!--
-        TAG <input> — campo de senha (type="password" oculta os caracteres)
-        A propriedade CSS 'border' define borda diferente no :focus (definida no style.css).
-      -->
-      <input
-        type="password"
-        id="senha"
-        name="senha"
-        placeholder="••••••••"
-        autocomplete="current-password"
-      />
-      <span class="field-icon" title="Mostrar/ocultar senha"
-            onclick="toggleSenha()">👁</span>
+    <div class="field-group">
+      <div class="field-row">
+        <label class="field-label" for="password">Senha</label>
+        <a href="#" class="forgot-link">Esqueceu a senha?</a>
+      </div>
+      <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" />
     </div>
 
-    <div class="options">
-      <label class="remember">
-        <!--
-          TAG <input type="checkbox"> — também estilizado com border no style.css
-        -->
-        <input type="checkbox" id="lembrar" />
-        Lembrar de mim
-      </label>
-      <a href="#" class="forgot">Esqueceu a senha?</a>
+    <button class="btn-login">Entrar</button>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-text">ou</span>
+      <div class="divider-line"></div>
     </div>
 
-    <button class="btn" onclick="entrar()">Entrar</button>
+    <p class="signup-text">
+      Não tem uma conta? <a href="#" class="signup-link">Criar conta</a>
+    </p>
 
-    <div class="divider">ou</div>
-
-    <div class="footer">
-      Não tem conta? <a href="#">Criar conta gratuita</a>
-    </div>
   </div>
 
 </body>

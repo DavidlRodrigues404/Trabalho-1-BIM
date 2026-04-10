@@ -1,0 +1,204 @@
+/* ── Reset ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Body / fundo ── */
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  padding: 2.5rem 1.5rem;
+  background-color: #0d0d12;
+  background-image:
+    radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
+    radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50% 90%, rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+    linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* ── Página ── */
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Cabeçalho ── */
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #f0eefc;
+  letter-spacing: -0.3px;
+}
+
+.header p {
+  font-size: 14px;
+  color: rgba(200, 196, 240, 0.5);
+  margin-top: 5px;
+}
+
+/* ── Legenda ── */
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: rgba(200, 196, 240, 0.5);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-root    { background: #534AB7; }
+.dot-section { background: #1D9E75; }
+.dot-page    { background: rgba(127, 119, 221, 0.45); }
+
+/* ── Card externo ── */
+.sitemap-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(127, 119, 221, 0.18);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+}
+
+/* ── Remove marcadores padrão de <ul> ── */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ════════════════════════════════
+   Nível 1 — Raiz
+   text-indent: 0px  (ponto de partida)
+   ════════════════════════════════ */
+ul.root > li > .node {
+  text-indent: 0px;          /* propriedade text-indent — nível raiz */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(83, 74, 183, 0.18);
+  border: 0.5px solid rgba(83, 74, 183, 0.4);
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+ul.root > li > .node .label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #c8c4f6;
+}
+
+/* ════════════════════════════════
+   Nível 2 — Seções
+   text-indent: 20px
+   ════════════════════════════════ */
+ul.level2 {
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+ul.level2 > li > .node {
+  text-indent: 20px;         /* propriedade text-indent — nível 2 */
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px;
+  background: rgba(29, 158, 117, 0.10);
+  border: 0.5px solid rgba(29, 158, 117, 0.25);
+  border-radius: 8px;
+  margin-bottom: 4px;
+  margin-left: 24px;
+}
+
+ul.level2 > li > .node .label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9fe1cb;
+}
+
+/* ════════════════════════════════
+   Nível 3 — Páginas
+   text-indent: 40px
+   ════════════════════════════════ */
+ul.level3 {
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+ul.level3 > li > .node {
+  text-indent: 40px;         /* propriedade text-indent — nível 3 */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: rgba(127, 119, 221, 0.06);
+  border: 0.5px solid rgba(127, 119, 221, 0.13);
+  border-radius: 7px;
+  margin-bottom: 3px;
+  margin-left: 48px;
+}
+
+ul.level3 > li > .node .label {
+  font-size: 13px;
+  color: rgba(200, 196, 240, 0.75);
+}
+
+/* ════════════════════════════════
+   Nível 4 — Subpáginas
+   text-indent: 60px
+   ════════════════════════════════ */
+ul.level4 {
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+ul.level4 > li > .node {
+  text-indent: 60px;         /* propriedade text-indent — nível 4 */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(127, 119, 221, 0.03);
+  border-left: 2px solid rgba(127, 119, 221, 0.18);
+  border-radius: 0;
+  margin-bottom: 2px;
+  margin-left: 72px;
+}
+
+ul.level4 > li > .node .label {
+  font-size: 12px;
+  color: rgba(200, 196, 240, 0.5);
+}
+
+/* ── URL exibida à direita em todos os níveis ── */
+.node {
+  display: flex;
+  align-items: center;
+}
+
+.node .url {
+  font-size: 11px;
+  color: rgba(127, 119, 221, 0.4);
+  margin-left: auto;
+  font-family: monospace;
+}
