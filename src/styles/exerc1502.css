@@ -195,8 +195,6 @@ time.unit {
   padding: 8px 14px;
   min-width: 68px;
   text-align: center;
-  /* CSS animation obrigatória */
-  animation: pulse-glow 2.8s ease-in-out infinite, flip-in 0.5s ease both;
 }
 
 time.unit:nth-child(1) .digit { animation-delay: 0s,   0s; }
