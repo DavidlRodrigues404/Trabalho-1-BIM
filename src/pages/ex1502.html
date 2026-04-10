@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NEXUS X1 — Lançamento</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/src/styles/exerc1502.css"/>
-<link rel="shortcut icon" href="/src/assets/favicon-32x32.png" type="image/x-icon">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Space+Mono&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/exerc1502.css" />
+  <link rel="shortcut icon" href="/src/assets/favicon-32x32.png" type="image/x-icon">
 
 </head>
+
 <body>
 
   <!-- NAV -->
   <nav class="navbar">
     <a href="#" class="btn-back" onclick="history.back(); return false;">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-        <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+          stroke-linejoin="round" />
       </svg>
       Voltar
     </a>
@@ -34,66 +39,73 @@
     </header>
 
     <!-- COUNTDOWN -->
-    <section class="countdown-section">
-      <p class="countdown-label">Faltam</p>
-      <div class="countdown" role="timer" aria-label="Contagem regressiva">
-        <time class="unit" datetime="P47D">
-          <span class="digit">47</span>
-          <span class="unit-name">Dias</span>
-        </time>
-        <span class="sep" aria-hidden="true">:</span>
-        <time class="unit" datetime="PT12H">
-          <span class="digit">12</span>
-          <span class="unit-name">Horas</span>
-        </time>
-        <span class="sep" aria-hidden="true">:</span>
-        <time class="unit" datetime="PT34M">
-          <span class="digit">34</span>
-          <span class="unit-name">Min</span>
-        </time>
-        <span class="sep" aria-hidden="true">:</span>
-        <time class="unit" datetime="PT18S">
-          <span class="digit">18</span>
-          <span class="unit-name">Seg</span>
-        </time>
-      </div>
-    </section>
+    <div class="countdown" role="timer" aria-label="Contagem regressiva">
 
+      <time class="unit">
+        <span class="digit" id="days">00</span>
+        <span class="unit-name">Dias</span>
+      </time>
+
+      <span class="sep">:</span>
+
+      <time class="unit">
+        <span class="digit" id="hours">00</span>
+        <span class="unit-name">Horas</span>
+      </time>
+
+      <span class="sep">:</span>
+
+      <time class="unit">
+        <span class="digit" id="minutes">00</span>
+        <span class="unit-name">Min</span>
+      </time>
+
+      <span class="sep">:</span>
+
+      <time class="unit">
+        <span class="digit" id="seconds">00</span>
+        <span class="unit-name">Seg</span>
+      </time>
+
+    </div>
     <!-- PRODUCT IMAGE -->
     <section class="product-section">
       <figure class="product-visual">
         <span class="badge">Edição Limitada</span>
-        <svg class="product-img" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="NEXUS X1">
-          <rect x="30" y="10" width="140" height="260" rx="24" fill="url(#bodyGrad)" stroke="url(#borderGrad)" stroke-width="1.2"/>
-          <rect x="44" y="28" width="112" height="190" rx="12" fill="url(#screenGrad)"/>
-          <circle cx="100" cy="76" r="22" fill="none" stroke="rgba(127,119,221,0.5)" stroke-width="1.2"/>
-          <circle cx="100" cy="76" r="12" fill="none" stroke="rgba(127,119,221,0.3)" stroke-width="1"/>
-          <circle cx="100" cy="76" r="4" fill="url(#dotGrad)"/>
-          <line x1="58" y1="112" x2="142" y2="112" stroke="rgba(127,119,221,0.18)" stroke-width="0.8"/>
-          <rect x="58" y="120" width="54" height="6" rx="3" fill="rgba(240,239,248,0.12)"/>
-          <rect x="58" y="132" width="84" height="5" rx="2.5" fill="rgba(240,239,248,0.07)"/>
-          <polyline points="58,176 76,163 94,170 112,152 130,158 142,144" stroke="url(#lineGrad)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="80" y="232" width="40" height="5" rx="2.5" fill="rgba(127,119,221,0.25)"/>
+        <svg class="product-img" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-label="NEXUS X1">
+          <rect x="30" y="10" width="140" height="260" rx="24" fill="url(#bodyGrad)" stroke="url(#borderGrad)"
+            stroke-width="1.2" />
+          <rect x="44" y="28" width="112" height="190" rx="12" fill="url(#screenGrad)" />
+          <circle cx="100" cy="76" r="22" fill="none" stroke="rgba(127,119,221,0.5)" stroke-width="1.2" />
+          <circle cx="100" cy="76" r="12" fill="none" stroke="rgba(127,119,221,0.3)" stroke-width="1" />
+          <circle cx="100" cy="76" r="4" fill="url(#dotGrad)" />
+          <line x1="58" y1="112" x2="142" y2="112" stroke="rgba(127,119,221,0.18)" stroke-width="0.8" />
+          <rect x="58" y="120" width="54" height="6" rx="3" fill="rgba(240,239,248,0.12)" />
+          <rect x="58" y="132" width="84" height="5" rx="2.5" fill="rgba(240,239,248,0.07)" />
+          <polyline points="58,176 76,163 94,170 112,152 130,158 142,144" stroke="url(#lineGrad)" stroke-width="1.5"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="80" y="232" width="40" height="5" rx="2.5" fill="rgba(127,119,221,0.25)" />
           <defs>
             <linearGradient id="bodyGrad" x1="30" y1="10" x2="170" y2="270" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#1e1b2e"/>
-              <stop offset="100%" stop-color="#0f0d18"/>
+              <stop offset="0%" stop-color="#1e1b2e" />
+              <stop offset="100%" stop-color="#0f0d18" />
             </linearGradient>
             <linearGradient id="borderGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="rgba(127,119,221,0.7)"/>
-              <stop offset="100%" stop-color="rgba(29,158,117,0.5)"/>
+              <stop offset="0%" stop-color="rgba(127,119,221,0.7)" />
+              <stop offset="100%" stop-color="rgba(29,158,117,0.5)" />
             </linearGradient>
             <linearGradient id="screenGrad" x1="44" y1="28" x2="156" y2="218" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#1a1730"/>
-              <stop offset="100%" stop-color="#0e0c1a"/>
+              <stop offset="0%" stop-color="#1a1730" />
+              <stop offset="100%" stop-color="#0e0c1a" />
             </linearGradient>
             <linearGradient id="dotGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#7f77dd"/>
-              <stop offset="100%" stop-color="#1d9e75"/>
+              <stop offset="0%" stop-color="#7f77dd" />
+              <stop offset="100%" stop-color="#1d9e75" />
             </linearGradient>
             <linearGradient id="lineGrad" x1="58" y1="0" x2="142" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#7f77dd"/>
-              <stop offset="100%" stop-color="#1d9e75"/>
+              <stop offset="0%" stop-color="#7f77dd" />
+              <stop offset="100%" stop-color="#1d9e75" />
             </linearGradient>
           </defs>
         </svg>
@@ -144,11 +156,11 @@
         <form action="#" method="post" novalidate>
           <div class="field-group">
             <label for="name">Nome</label>
-            <input type="text" id="name" name="name" placeholder="Seu nome completo" required/>
+            <input type="text" id="name" name="name" placeholder="Seu nome completo" required />
           </div>
           <div class="field-group">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required/>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
           </div>
           <div class="field-group">
             <label for="variant">Versão</label>
@@ -171,5 +183,39 @@
     <p>&copy; 2026 NEXUS Technologies — Todos os direitos reservados</p>
   </footer>
 
+  <script>
+    const launchDate = new Date("2026-06-01T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        document.querySelector(".countdown").innerHTML = "Lançado 🚀";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").textContent = String(days).padStart(2, '0');
+      document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+      document.querySelectorAll(".digit").forEach(el => {
+        el.style.animation = "none";
+        el.offsetHeight;
+        el.style.animation = "";
+      });
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
 </body>
+
 </html>
