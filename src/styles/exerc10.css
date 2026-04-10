@@ -1,62 +1,250 @@
-* {
+/* ============================================
+   TESTEMUNHOS — CSS
+   Exercício 10: <blockquote> + font-style
+   ============================================ */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* ---------- Body (modelo fornecido + extras) ---------- */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   min-height: 100vh;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #0d0d12;
   background-image:
     radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
     radial-gradient(ellipse 420px 420px at 108% 108%, rgba(29, 158, 117, 0.20) 0%, transparent 70%),
-    radial-gradient(ellipse 300px 300px at 50% 90%, rgba(83, 74, 183, 0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50% 90%,  rgba(83, 74, 183, 0.10) 0%, transparent 70%),
     linear-gradient(rgba(127, 119, 221, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(127, 119, 221, 0.04) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  color: #e8e6f0;
 }
 
-blockquote {
-  margin: 0;
-  max-width: 480px;
-  padding: 28px 32px;
-  border-left: 4px solid rgba(127, 119, 221, 0.9); /* borda roxa */
-  background: rgba(83, 74, 183, 0.12);             /* fundo semi-transparente */
-  border-radius: 0 10px 10px 0;                    /* arredonda só o lado direito */
-  backdrop-filter: blur(8px);                       /* efeito de vidro */
-  position: relative;                               /* necessário para o ::before funcionar */
+/* ---------- Navbar ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 60px;
+  background-color: rgba(13, 13, 18, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(127, 119, 221, 0.12);
 }
 
-/* ::before cria um elemento decorativo sem precisar de HTML extra */
-blockquote::before {
-  content: '\201C';          /* código do caractere " */
-  font-size: 72px;
-  line-height: 1;
-  color: rgba(127, 119, 221, 0.3);
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-family: Georgia, serif;
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(200, 196, 230, 0.7);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease, gap 0.2s ease;
 }
 
-blockquote p {
-  margin: 0 0 12px 0;
-  font-size: 18px;
+.nav-back:hover {
+  color: #a79fe8;
+  gap: 12px;
+}
+
+.nav-title {
+  font-family: 'inter', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(200, 196, 230, 0.55);
+  letter-spacing: 0.06em;
+}
+
+.nav-spacer {
+  width: 80px; /* espelha o nav-back para centralizar o título */
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 130px 24px 48px;
+  text-align: center;
+}
+
+.hero-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(127, 119, 221, 0.8);
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: 'inter', serif;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #f0eeff;
+  margin-bottom: 16px;
+}
+
+/* font-style aplicado no <em> do título */
+.hero-title em {
   font-style: italic;
-  color: #d0cdff;
-  line-height: 1.7;
-  padding-left: 28px; /* espaço para não sobrepor o " decorativo */
+  color: #a79fe8;
 }
 
-/* <cite> é a tag correta para indicar a fonte/autor da citação */
-blockquote cite {
-  display: block;
-  font-size: 13px;
-  color: rgba(127, 119, 221, 0.7);
-  font-style: normal;
-  padding-left: 28px;
-  letter-spacing: 0.4px;
+.hero-sub {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(200, 196, 230, 0.55);
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Grid de Cards ---------- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+/* Card base */
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(127, 119, 221, 0.13);
+  border-radius: 16px;
+  padding: 32px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(127, 119, 221, 0.32);
+  box-shadow: 0 16px 40px rgba(83, 74, 183, 0.18);
+}
+
+/* Card destaque */
+.card--featured {
+  border-color: rgba(127, 119, 221, 0.30);
+  background: rgba(83, 74, 183, 0.08);
+}
+
+/* Card largo (ocupa 2 colunas quando há espaço) */
+.card--wide {
+  grid-column: span 2;
+}
+
+/* Ícone de aspas decorativo */
+.card-quote-icon {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: rgba(127, 119, 221, 0.12);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ---------- <blockquote> — tag exigida pelo exercício ---------- */
+blockquote {
+  border: none;       /* remove estilo padrão do browser */
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- .quote-text com font-style — propriedade exigida pelo exercício ---------- */
+.quote-text {
+  font-style: italic;           /* ← PROPRIEDADE DO EXERCÍCIO */
+  font-size: 0.97rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(224, 220, 248, 0.85);
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Rodapé do card (autor) ---------- */
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(127, 119, 221, 0.25);
+  flex-shrink: 0;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.author-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #e0dcf8;
+  letter-spacing: 0.01em;
+}
+
+.author-role {
+  font-size: 0.76rem;
+  font-weight: 300;
+  color: rgba(160, 155, 200, 0.6);
+  letter-spacing: 0.02em;
+}
+
+.rating {
+  font-size: 0.8rem;
+  color: #a79fe8;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 640px) {
+  .card--wide {
+    grid-column: span 1;
+  }
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 100px 16px 36px;
+  }
+
+  .testimonials-grid {
+    padding: 0 16px 48px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
 }

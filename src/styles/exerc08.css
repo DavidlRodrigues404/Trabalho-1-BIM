@@ -1,18 +1,23 @@
-* {
-  box-sizing: border-box;
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Propriedade solicitada no exercício */
 }
 
+/* =============================================
+   BODY — padrão de estilização do exercício
+   ============================================= */
 body {
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
   margin: 0;
-
-  /* centraliza o botão na tela */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* fundo escuro com gradientes */
   background-color: #0d0d12;
   background-image:
     radial-gradient(ellipse 500px 500px at -5% -15%, rgba(83, 74, 183, 0.28) 0%, transparent 70%),
@@ -23,30 +28,340 @@ body {
   background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
 }
 
-.btn {
-  width: 200px;
-  padding: 14px 20px;
-  border: 1.5px solid rgba(127, 119, 221, 0.6);
-  background: rgba(83, 74, 183, 0.18);  /* fundo semi-transparente */
-  color: #d0cdff;
-  font-size: 16px;
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* box-sizing aplicado na navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: rgba(13, 13, 18, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(127, 119, 221, 0.12);
+  z-index: 100;
+}
+
+.btn-voltar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box; /* box-sizing no botão de voltar */
+  background: rgba(127, 119, 221, 0.10);
+  border: 1px solid rgba(127, 119, 221, 0.22);
+  color: rgba(200, 197, 255, 0.85);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
   font-weight: 500;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
   cursor: pointer;
-  letter-spacing: 0.5px;
-  backdrop-filter: blur(8px);           /* efeito de vidro fosco */
-  transition: background 0.25s, transform 0.15s, box-shadow 0.25s, border-color 0.25s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
-.btn:hover {
-  background: rgba(83, 74, 183, 0.38);
-  border-color: rgba(127, 119, 221, 1);
+.btn-voltar:hover {
+  background: rgba(127, 119, 221, 0.20);
+  border-color: rgba(127, 119, 221, 0.45);
   color: #fff;
-  box-shadow: 0 0 24px rgba(127, 119, 221, 0.28); /* brilho roxo */
-  transform: translateY(-2px);
 }
 
-.btn:active {
-  transform: scale(0.96);
-  box-shadow: none;
+.navbar-logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: rgba(200, 197, 255, 0.9);
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* box-sizing nos ícones da navbar */
+  width: 38px;
+  height: 38px;
+  background: rgba(127, 119, 221, 0.08);
+  border: 1px solid rgba(127, 119, 221, 0.18);
+  border-radius: 8px;
+  color: rgba(200, 197, 255, 0.7);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.icon-btn:hover {
+  background: rgba(127, 119, 221, 0.18);
+  color: #fff;
+}
+
+/* =============================================
+   PRODUTO — CONTAINER PRINCIPAL
+   ============================================= */
+.produto-container {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  max-width: 940px;
+  width: 90%;
+  margin-top: 80px;
+  padding: 48px;
+  box-sizing: border-box; /* box-sizing no container do produto */
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(127, 119, 221, 0.14);
+  border-radius: 24px;
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 0 1px rgba(127, 119, 221, 0.06),
+    0 32px 64px rgba(0, 0, 0, 0.45);
+}
+
+/* =============================================
+   IMAGEM DO PRODUTO
+   ============================================= */
+.produto-imagem {
+  position: relative;
+  flex-shrink: 0;
+  width: 340px;
+  height: 360px;
+  box-sizing: border-box; /* box-sizing na seção de imagem */
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(127, 119, 221, 0.06);
+  border: 1px solid rgba(127, 119, 221, 0.14);
+}
+
+.produto-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.produto-imagem:hover img {
+  transform: scale(1.04);
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  box-sizing: border-box; /* box-sizing no badge */
+  background: rgba(29, 158, 117, 0.85);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* =============================================
+   DETALHES DO PRODUTO
+   ============================================= */
+.produto-detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-sizing: border-box; /* box-sizing nos detalhes */
+  flex: 1;
+}
+
+.produto-categoria {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(127, 119, 221, 0.75);
+}
+
+.produto-titulo {
+  font-family: 'Sora', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f0eeff;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.produto-descricao {
+  font-size: 0.93rem;
+  line-height: 1.7;
+  color: rgba(200, 197, 220, 0.65);
+}
+
+/* Avaliação */
+.produto-avaliacao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.estrelas {
+  color: #c0a96e;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.reviews {
+  font-size: 0.82rem;
+  color: rgba(200, 197, 220, 0.5);
+}
+
+/* Preço */
+.produto-preco {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.preco-original {
+  font-size: 0.9rem;
+  color: rgba(200, 197, 220, 0.35);
+  text-decoration: line-through;
+}
+
+.preco-atual {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f0eeff;
+}
+
+.desconto {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1d9e75;
+  background: rgba(29, 158, 117, 0.12);
+  border: 1px solid rgba(29, 158, 117, 0.25);
+  box-sizing: border-box; /* box-sizing no badge de desconto */
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+/* Opções de cor */
+.opcao-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(200, 197, 220, 0.55);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.cores {
+  display: flex;
+  gap: 10px;
+}
+
+.cor-btn {
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box; /* box-sizing nos botões de cor */
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.cor-btn:hover,
+.cor-btn.ativo {
+  border-color: rgba(200, 197, 255, 0.7);
+  transform: scale(1.15);
+}
+
+/* =============================================
+   BOTÃO DE COMPRA — box-sizing aplicado
+   ============================================= */
+.btn-comprar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box; /* Propriedade CSS solicitada no exercício */
+  padding: 15px 32px;
+  background: linear-gradient(135deg, #534ab7 0%, #3b82c4 100%);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(83, 74, 183, 0.35);
+}
+
+.btn-comprar:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(83, 74, 183, 0.5);
+}
+
+.btn-comprar:active {
+  transform: translateY(0);
+}
+
+/* =============================================
+   BOTÃO FAVORITAR
+   ============================================= */
+.btn-favoritar {
+  width: 100%;
+  box-sizing: border-box; /* box-sizing no botão secundário */
+  padding: 13px 32px;
+  background: transparent;
+  color: rgba(200, 197, 220, 0.6);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(127, 119, 221, 0.18);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-favoritar:hover {
+  background: rgba(127, 119, 221, 0.08);
+  color: #f0eeff;
+  border-color: rgba(127, 119, 221, 0.35);
+}
+
+/* =============================================
+   RESPONSIVO
+   ============================================= */
+@media (max-width: 720px) {
+  .produto-container {
+    flex-direction: column;
+    padding: 28px 22px;
+    gap: 28px;
+    margin-top: 90px;
+    margin-bottom: 24px;
+  }
+
+  .produto-imagem {
+    width: 100%;
+    height: 260px;
+  }
+
+  .produto-titulo {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    padding: 12px 20px;
+  }
 }

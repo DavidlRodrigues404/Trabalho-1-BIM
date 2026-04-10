@@ -1,19 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testumunhos - David Rodrigues</title>
-    <link rel="stylesheet" href="/src/styles/exerc10.css">
-    <link rel="shortcut icon" href="/src/assets/favicon-32x32.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testemunhos — Clientes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/exerc10.css" />
 </head>
-
 <body>
-    <blockquote>
-        <p>A persistência é o caminho do êxito.</p>
-        <cite>— Charles Chaplin</cite>
-    </blockquote>
-</body>
 
+  <!-- NAV BAR -->
+  <nav class="navbar">
+    <a href="#" class="nav-back" onclick="history.back(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5"/>
+        <path d="M12 19l-7-7 7-7"/>
+      </svg>
+      Voltar
+    </a>
+    <span class="nav-title">Testemunhos</span>
+    <div class="nav-spacer"></div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <p class="hero-label">O que dizem sobre nós</p>
+    <h1 class="hero-title">Histórias reais,<br /><em>resultados reais</em></h1>
+  </header>
+
+  <!-- TESTIMONIALS GRID -->
+  <main class="testimonials-grid">
+
+    <article class="card card--featured">
+      <div class="card-quote-icon">"</div>
+      <blockquote cite="https://exemplo.com/ana">
+        <p class="quote-text">Desde que comecei a usar o serviço, minha produtividade aumentou absurdamente. É raro encontrar uma ferramenta que realmente entenda o fluxo de trabalho de um designer independente.</p>
+      </blockquote>
+      <footer class="card-footer">
+        <img src="https://i.pravatar.cc/64?img=47" alt="Foto de Ana Lima" class="avatar" />
+        <div class="author-info">
+          <strong class="author-name">Ana Lima</strong>
+          <span class="author-role">Designer · São Paulo</span>
+        </div>
+        <div class="rating">★★★★★</div>
+      </footer>
+    </article>
+
+    <article class="card">
+      <div class="card-quote-icon">"</div>
+      <blockquote cite="https://exemplo.com/marcos">
+        <p class="quote-text">Suporte excepcional e entrega impecável. Recomendo para qualquer empresa que queira escalar sem perder qualidade.</p>
+      </blockquote>
+      <footer class="card-footer">
+        <img src="https://i.pravatar.cc/64?img=12" alt="Foto de Marcos Souza" class="avatar" />
+        <div class="author-info">
+          <strong class="author-name">Marcos Souza</strong>
+          <span class="author-role">CEO · Startup Tech</span>
+        </div>
+        <div class="rating">★★★★★</div>
+      </footer>
+    </article>
+
+    <article class="card">
+      <div class="card-quote-icon">"</div>
+      <blockquote cite="https://exemplo.com/julia">
+        <p class="quote-text">Interface linda, experiência fluida. Nunca imaginei que migrar de plataforma fosse tão simples. Valeu cada centavo.</p>
+      </blockquote>
+      <footer class="card-footer">
+        <img src="https://i.pravatar.cc/64?img=32" alt="Foto de Júlia Ferreira" class="avatar" />
+        <div class="author-info">
+          <strong class="author-name">Júlia Ferreira</strong>
+          <span class="author-role">Product Manager · Fintech</span>
+        </div>
+        <div class="rating">★★★★☆</div>
+      </footer>
+    </article>
+
+    <article class="card">
+      <div class="card-quote-icon">"</div>
+      <blockquote cite="https://exemplo.com/rafael">
+        <p class="quote-text">Finalmente uma solução que não exige uma semana de onboarding. Minha equipe adotou em horas e os resultados vieram rápido.</p>
+      </blockquote>
+      <footer class="card-footer">
+        <img src="https://i.pravatar.cc/64?img=68" alt="Foto de Rafael Costa" class="avatar" />
+        <div class="author-info">
+          <strong class="author-name">Rafael Costa</strong>
+          <span class="author-role">Dev Lead · Agência Digital</span>
+        </div>
+        <div class="rating">★★★★★</div>
+      </footer>
+    </article>
+
+    <article class="card card--wide">
+      <div class="card-quote-icon">"</div>
+      <blockquote cite="https://exemplo.com/camila">
+        <p class="quote-text">Já usei dezenas de ferramentas no mercado e posso dizer com convicção: nenhuma chega perto. A combinação de design e funcionalidade aqui é algo que eu não esperava encontrar. Transformou completamente a forma como gerencio meus projetos.</p>
+      </blockquote>
+      <footer class="card-footer">
+        <img src="https://i.pravatar.cc/64?img=5" alt="Foto de Camila Torres" class="avatar" />
+        <div class="author-info">
+          <strong class="author-name">Camila Torres</strong>
+          <span class="author-role">Fundadora · Studio Branding</span>
+        </div>
+        <div class="rating">★★★★★</div>
+      </footer>
+    </article>
+
+    <article class="card">
+      <div class="card-quote-icon">"</div>
+      <blockquote cite="https://exemplo.com/pedro">
+        <p class="quote-text">O atendimento pós-venda surpreendeu. Senti que estavam genuinamente interessados no meu sucesso, não apenas na venda.</p>
+      </blockquote>
+      <footer class="card-footer">
+        <img src="https://i.pravatar.cc/64?img=53" alt="Foto de Pedro Alves" class="avatar" />
+        <div class="author-info">
+          <strong class="author-name">Pedro Alves</strong>
+          <span class="author-role">Consultor · Marketing</span>
+        </div>
+        <div class="rating">★★★★★</div>
+      </footer>
+    </article>
+
+  </main>
+
+</body>
 </html>
